@@ -1,0 +1,72 @@
+﻿@model IEnumerable<ProjectWebCuoiKhoa.Models.Product>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<link rel="stylesheet" href="~/Content/css/ProductDelete.css" />
+<div class="container wrapperDelete">
+    <h2 class="myfix">List</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "CreateAdmin")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NamePro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NameCPU)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VGA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RAM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IDCate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImagePro)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NamePro)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NameCPU)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VGA)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RAM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IDCate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ImagePro)
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ProductID },new { @class = "myfix" })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</div>

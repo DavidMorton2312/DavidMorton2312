@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/css/layoutStyle.css" />
+    <!--fontAwesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <!--bootstrap-->
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
+    <link rel="stylesheet" href="~/Content/css/base.css">
+    <link rel="stylesheet" href="~/Scripts/AnimationChange.js" />
+</head>
+<body>
+    <div>
+        <div id="wrapper">
+            <div id="header">
+                <div class="container wide">
+                    <div class="header__navbar">
+                        <div class="header__left">
+                            <div class="header__logo">
+                                <i>
+                                    <b>LGO</b>
+                                </i>
+                            </div>
+                            <div class="header__nav left">
+                                <ul class="header__nav-list">
+                                    <li class="header__nav-item item1">
+                                        @*@Html.ActionLink("Home", "IndexAdmin", "Home", null, new { @class = "header__nav-link" })*@
+                                        <a class="header__nav-link" href="@Url.Action("IndexAdmin","Home")">Home</a>
+                                    </li>
+                                    <li class="header__nav-item item2">
+                                        <a class="header__nav-link" href="@Url.Action("CreateAdmin","Product")">Create Product</a>
+                                    </li>
+                                    <li class="header__nav-item item2">
+                                        <a class="header__nav-link" href="@Url.Action("Index","Categories")">Add Cate</a>
+                                    </li>
+                                    <li class="header__nav-item item2">
+                                        <a class="header__nav-link" href="@Url.Action("List","Product")">Delete Product</a>
+                                    </li>
+                                    <li class="header__nav-item item2">
+                                        <a class="header__nav-link" href="@Url.Action("Index","OrderProes")">View Order</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="header__right">
+                            <div class="header__nav right">
+                                <ul class="header__nav-list">
+                                    <li class="header__nav-item shoppingCart">
+                                        <i class="fa-solid fa-user"></i>
+                                        <a href="@Url.Action("LogOutUser","LoginUser")" class="subnav-list-link">LogOut</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="content">
+                @RenderBody()
+            </div>
+            <div id="footer">
+                <div class="container">
+                    <div class="footer-wrapper">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                <div class="policy">
+                                    <div class="policy__heading">
+                                        <span>CÔNG TY TNHH THƯƠNG MẠI LGO</span>
+                                        <span>EMAIL: CSKH@lGO.COM</span>
+                                        <span><b>HỆ THỐNG TỔNG ĐÀI MIỄN PHÍ</b>: (Làm việc từ 08h00 - 21h00)</span>
+                                    </div>
+                                    <div class="policy__body">
+                                        <span>Chính sách bảo hành</span>
+                                        <span>Chính sách thanh toán</span>
+                                        <span>Chính sách giao hàng</span>
+                                        <span>Chính sách bảo mật</span>
+                                    </div>
+                                    <div class="policy__body">
+                                        <img src="~/image/logoSaleNoti.png" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                <div class="policy">
+                                    <h4>HỆ THỐNG CỬA HÀNG:</h4>
+                                    <div class="policy__heading">
+                                        <span>SHOWROOM HCM (Làm việc từ 8h00 - 21h00)</span>
+                                        <span>SHOWROOM HN (Làm việc từ 8h00 - 21h00)</span>
+                                    </div>
+                                    <h4>HỆ THỐNG CỬA HÀNG:</h4>
+                                    <div class="policy__body">
+                                        <span>SHOWROOM HCM (Làm việc từ 8h00 - 21h00)</span>
+                                        <span>SHOWROOM HN (Làm việc từ 8h00 - 21h00)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                <div class="policy">
+                                    <h4>FANPAGE:</h4>
+                                    <div class="policy__heading">
+                                    </div>
+                                    <h4>HỆ THỐNG CỬA HÀNG:</h4>
+                                    <div id="fb-root"></div>
+                                    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v15.0&appId=513469078999613&autoLogAppEvents=1" nonce="1qLPyU9e"></script>
+                                    <div class="policy__body">
+                                        <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <link rel="stylesheet" href="~/Scripts/AnimationChange.js" />
+    </div>
+</body>
+</html>
+<script src="~/Scripts/script.js"></script>

@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="vn">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="UTF-8">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/css/layoutStyle.css" />
+    <!--fontAwesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <!--bootstrap-->
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
+    <link rel="stylesheet" href="~/Content/css/base.css">
+    <link rel="stylesheet" href="~/Scripts/AnimationChange.js" />
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <div class="container wide">
+                <div class="header__navbar">
+                    <div class="header__left">
+                        <div class="header__logo">
+                            <i>
+                                <b>LGO</b>
+                            </i>
+                        </div>
+                        <div class="header__nav left">
+                            <ul class="header__nav-list">
+                                <li class="header__nav-item item1">
+                                    @Html.ActionLink("Home", "Index", "Home", null, new { @class = "header__nav-link" })
+                                </li>
+                                <li class="header__nav-item item2">
+                                    <!-- <a href="" class="header__nav-link">Working</a>   -->
+                                    @Html.ActionLink("Working", "WorkingCate", "Home", null, new { @class = "header__nav-link" })
+                                </li>
+                                <li class="header__nav-item item2">
+                                    <!-- <a href="" class="header__nav-link">Gaming</a>   -->
+                                    @Html.ActionLink("Gaming", "GamingCate", "Home", null, new { @class = "header__nav-link" })
+                                </li>
+                                <li class="header__nav-item item2">
+                                    <a class="header__nav-link">About</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="header__right">
+                        <div class="header__nav right">
+                            <ul class="header__nav-list">
+                                <li class="header__nav-item user">
+                                    <a class="header__nav-link icon">
+                                        <i class="fa-solid fa-user"></i>
+                                    </a>
+                                    <ul class="subnav-list">
+                                        <li class="subnav-list-item">
+                                            @*<a href="/Home/SignIn" class="subnav-list-link">Sign In</a>*@
+                                            @Html.ActionLink("Sign In", "Index", "LoginUser", null, new { @class = "subnav-list-link" })
+                                        </li>
+                                        <li class="subnav-list-item">
+                                            @*<a class="subnav-list-link">Sign Un</a>*@
+                                            @Html.ActionLink("Sign Up", "SignUp", "LoginUser", null, new { @class = "subnav-list-link" })
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="header__nav-item shoppingCart">
+                                    <span>
+                                        <a class="header__nav-link icon" href="/ShoppingCart/ShowCart">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </a>
+                                    </span>
+                                    @Html.Action("BagCart", "ShoppingCart")
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content">
+            @RenderBody()
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="footer-wrapper">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="policy">
+                                <div class="policy__heading">
+                                    <span>CÔNG TY TNHH THƯƠNG MẠI LGO</span>
+                                    <span>EMAIL: CSKH@lGO.COM</span>
+                                    <span><b>HỆ THỐNG TỔNG ĐÀI MIỄN PHÍ</b>: (Làm việc từ 08h00 - 21h00)</span>
+                                </div>
+                                <div class="policy__body">
+                                    <span>Chính sách bảo hành</span>
+                                    <span>Chính sách thanh toán</span>
+                                    <span>Chính sách giao hàng</span>
+                                    <span>Chính sách bảo mật</span>
+                                </div>
+                                <div class="policy__body">
+                                    <img src="~/image/logoSaleNoti.png" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="policy">
+                                <h4>HỆ THỐNG CỬA HÀNG:</h4>
+                                <div class="policy__heading">
+                                    <span>SHOWROOM HCM (Làm việc từ 8h00 - 21h00)</span>
+                                    <span>SHOWROOM HN (Làm việc từ 8h00 - 21h00)</span>
+                                </div>
+                                <h4>HỆ THỐNG CỬA HÀNG:</h4>
+                                <div class="policy__body">
+                                    <span>SHOWROOM HCM (Làm việc từ 8h00 - 21h00)</span>
+                                    <span>SHOWROOM HN (Làm việc từ 8h00 - 21h00)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="policy">
+                                <h4>FANPAGE:</h4>
+                                <div class="policy__heading">
+                                </div>
+                                <h4>HỆ THỐNG CỬA HÀNG:</h4>
+                                <div id="fb-root"></div>
+                                <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v15.0&appId=513469078999613&autoLogAppEvents=1" nonce="1qLPyU9e"></script>
+                                <div class="policy__body">
+                                    <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <link rel="stylesheet" href="~/Scripts/AnimationChange.js" />
+</body>
+</html>

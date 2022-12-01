@@ -1,0 +1,37 @@
+﻿@model IEnumerable<ProjectWebCuoiKhoa.Models.OrderPro>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="container">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOrder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddressDeliverry)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer.NameCus)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOrder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddressDeliverry)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.NameCus)
+            </td>
+        </tr>
+    }
+
+    </table>
+</div>

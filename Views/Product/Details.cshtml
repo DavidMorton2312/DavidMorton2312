@@ -1,0 +1,226 @@
+﻿@model ProjectWebCuoiKhoa.Models.DetailViewProduct
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{ 
+    int i = 0;
+}
+
+
+<link href="~/bootstrap/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/css/StyleProduct.css" rel="stylesheet" />
+<link href="~/Content/Reponsive.css" rel="stylesheet" />
+<link href="~/Content/css/ResponsiveDetail.css" rel="stylesheet" />
+<link href="https://site-assets.fontawesome.com/releases/v6.1.2/css/all.css?fbclid=IwAR3a3GOXmZTEzaFuZVossnbiDd5VW7kxK7i55m4Xaje2aiXWs3tnKZQfcQU" rel="stylesheet" />
+<div>
+    <div class="FirstPage-Product d-flex position-relative">
+        <div class="banner position-fixed start-0">
+            <img src="~/image/stk-bn-left.jpg" alt="banner" />
+        </div>
+        <div class="btn-Img d-flex flex-column ">
+            <div class="Img-Product">
+                <img src="@Url.Content(Model.Product.ImagePro)" alt="picture laptop" class="shadow" />
+            </div>
+            <div class="btn-Buy-Product btn btn-success">
+                <a href="/ShoppingCart/AddToCart/@Model.Product.ProductID" class="size color hover"><b>Buy</b></a>
+            </div>           
+        </div>
+
+        <div class="Common-Infor-product d-flex flex-column ">
+            <h1 class="size">@Model.Product.NamePro</h1>
+            <div class="rate-star-product">
+                <span class="fa fa-star color-star"></span>
+                <span class="fa fa-star color-star"></span>
+                <span class="fa fa-star color-star"></span>
+                <span class="fa fa-star color-star"></span>
+                <span class="fa fa-star color-star"></span>
+            </div>
+            <h3><b>@Model.Product.Price</b></h3>
+            <div class="configuration-Product">
+                <ul class="ps-2" style="list-style-type:none;">
+                    <li class="size"><i class="fa-solid fa-circle-check size"></i><b>CPU</b>: @Model.Product.NameCPU</li>
+                    <li class="size"><i class="fa-solid fa-circle-check size"></i><b>VGA</b>: @Model.Product.VGA</li>
+                    <li class="size"><i class="fa-solid fa-circle-check size"></i><b>Ram</b>: @Model.Product.RAM </li>
+                    <li class="size"><i class="fa-solid fa-circle-check size"></i><b>Ổ cứng</b>: @Model.Product.Storage </li>
+                    <li class="size"><i class="fa-solid fa-circle-check size"></i><b>Màn hình</b>: @Model.Product.Resolution </li>
+                </ul>
+            </div>
+            <div class="PromotionInformation-product">
+                <h6 style="color:#000; text-align: center; margin: 8px 16px" class="size">Thông Tin Khuyến Mại</h6>
+                <br />
+                <h6 style="color:#000;" class="size"><i style="color:#000;" class="fa-regular fa-gift"></i> BACK TO SCHOOL - HÀNH TRANG COOL</h6>
+                <ul class="li-promotion-product mx-3">
+                    <li class="size btn-success ">Thanh toán VNPAY Giảm 2% tối đa 500.000đ</li>
+                    <li class="size ">RAM TO KHÔNG LO GIẬT LAG</li>
+                    <li class="size">Tặng bộ Microsoft Office 365 + 1TB Onedrive bản quyền</li>
+                </ul>
+                <h6 style="color:#000;" class="size"><i style="color:#000;" class="fa-regular fa-gift"></i> Ưu Đãi</h6>
+                <ul class="li-promotion-product mx-3">
+                    <li class="size">Tặng chuột MSI M88 (QTT)</li>
+                    <li class="size">Tặng túi chống sốc cao cấp (QTT)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="banner position-fixed end-0">
+            <img src="~/image/stk-bn-right.jpg" alt="banner" />
+        </div>
+    </div>
+    <div class="Detail-Product position-relative clear">
+        <div class="Detail-specifications-Product btn position-absolute btn-success">
+            <span class="size">Thông số kỹ thuật</span>
+        </div>
+        <div class="Detail-Box-Product position-absolute">          
+            <div  class="specifications-Product">
+                <div class="title">
+                    <h4>Bộ xử lý và đồ họa</h4>
+                </div>
+                <div class="Cpu-Product">
+                    <ul style="list-style-type:none">
+                        <li style="display:flex;">
+                            <div class="left">
+                                <span style="font-size: 20px;">Tên CPU:</span>
+                            </div>
+                            <div class="right">
+                                <span style="font-size: 20px;">@Model.Product.NameCPU</span>
+                            </div>
+                        </li>
+
+                        <li style="display:flex;">
+                            <div class="left">
+                                <span style="font-size: 20px;">Số nhân:</span>
+                            </div>
+                            <div class="right">
+                                <span style="font-size: 20px;">@Model.Product.Core</span>
+                            </div>
+                        </li>
+
+                        <li style="display:flex;">
+                            <div class="left">
+                                <span style="font-size: 20px;">Số luồng:</span>
+                            </div>
+                            <div class="right">
+                                <span style="font-size: 20px;">@Model.Product.Thread</span>
+                            </div>
+                        </li>
+
+                        <li style="display:flex;">
+                            <div class="left">
+                                <span style="font-size: 20px;">Tốc độ CPU:</span>
+                            </div>
+                            <div class="right">
+                                <span style="font-size: 20px;">@Model.Product.BusCPU</span>
+                            </div>
+                        </li>
+
+                        <li style="display:flex;">
+                            <div class="left">
+                                <span style="font-size: 20px;">Card đồ họa:</span>
+                            </div>
+                            <div class="right">
+                                <span style="font-size: 20px;">@Model.Product.VGA</span>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="title">
+                    <h4>Ram và ổ cứng</h4>
+                </div>
+
+                <div class="Ram-Product">
+                    <ul style="list-style-type:none">
+                        <li style="display:flex;">
+                            <div class="left">
+                                <span style="font-size: 20px;">Ổ cứng:</span>
+                            </div>
+                            <div class="right">
+                                <span style="font-size: 20px;">@Model.Product.Storage</span>
+                            </div>
+                        </li>
+
+                        <li style="display:flex;">
+                            <div class="left">
+                                <span style="font-size: 20px;">Ram:</span>
+                            </div>
+                            <div class="right">
+                                <span style="font-size: 20px;">@Model.Product.RAM</span>
+                            </div>
+                        </li>
+
+                        <li style="display:flex;">
+                            <div class="left">
+                                <span style="font-size: 20px;">Burst Ram:</span>
+                            </div>
+                            <div class="right">
+                                <span style="font-size: 20px;">@Model.Product.BusRam</span>
+                            </div>
+                        </li>
+
+                        <li style="display:flex;">
+                            <div class="left">
+                                <span style="font-size: 20px;">Hỗ trợ Ram tối đa:</span>
+                            </div>
+                            <div class="right">
+                                <span style="font-size: 20px;">@Model.Product.MaxRam</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="title">
+                    <h4>Màn hình</h4>
+                </div>
+
+                <div class="Monitor-Product">
+                    <ul style="list-style-type:none">
+                        <li style="display:flex;">
+                            <div class="left">
+                                <span style="font-size: 20px;">Độ phân giải:</span>
+                            </div>
+                            <div class="right">
+                                <span style="font-size: 20px;">@Model.Product.Resolution</span>
+                            </div>
+                        </li>
+
+                        <li style="display:flex;">
+                            <div class="left">
+                                <span style="font-size: 20px;">Tấm Nền:</span>
+                            </div>
+                            <div class="right">
+                                <span style="font-size: 20px;">@Model.Product.Nen</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="Detail-Reconmend-Product position-absolute container-fluid">
+            <div class="row">
+                @foreach (var pro in Model.Products)
+                {
+                    if (i == 4)
+                    {
+                        break;
+                    }
+                    <div class="product-cate RecomendProduct col-lg-3 fix-orgin">
+                        <img class="fix-img" width="200" src="@Url.Content(pro.ImagePro)" />
+                        <ul>
+                            <li><span class="product-cate__name">@pro.NamePro</span></li>
+                            <li><span class="product-cate__price">@pro.Price.Value.ToString("#,##0").Replace(',', '.')</span></li>
+                            <li><a href="/Product/Details/@pro.ProductID" class="product-cate__btn fix-span-label">Buy</a></li>
+                        </ul>
+                    </div>
+                    i++;
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Scripts/MyJavaScript.js"></script>
+
+

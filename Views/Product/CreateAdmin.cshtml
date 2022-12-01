@@ -1,0 +1,103 @@
+﻿@model ProjectWebCuoiKhoa.Models.Product
+
+@{
+    ViewBag.Title = "CreateAdmin";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<link rel="stylesheet" href="~/Content/css/ProductCreate.css" />
+<div class="container wrapperCreate">
+
+    <h2 class="myfix">Thêm mới sản phẩm</h2>
+    @using (Html.BeginForm("CreateAdmin", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+    <div class="commonSection">
+        <div class="left-section">
+            <table class="table-bordered widthFix">
+                <tr>
+                    <td>@Html.LabelFor(model => model.NamePro, new { @class = "myfix margin" })</td>
+                    <td>@Html.EditorFor(model => model.NamePro, new { @class = "Fixleft" })</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Price, new { @class = "myfix margin" })</td>
+                    <td>@Html.EditorFor(model => model.Price, new { @class = "Fixleft" })</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Category, new { @class = "myfix margin" })</td>
+                    <td>@{Html.RenderAction("SelectCate", "Product", new { @class = "Fixleft" });}</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.NameCPU, new { @class = "myfix margin" })</td>
+                    <td>@Html.EditorFor(model => model.NameCPU, new { @class = "Fixleft" })</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.BusCPU, new { @class = "myfix margin" })</td>
+                    <td>@Html.EditorFor(model => model.BusCPU, new { @class = "Fixleft" })</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Core, new { @class = "myfix margin" })</td>
+                    <td>@Html.EditorFor(model => model.Core, new { @class = "Fixleft" })</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Thread, new { @class = "myfix margin" })</td>
+                    <td>@Html.EditorFor(model => model.Thread, new { @class = "Fixleft" })</td>
+                </tr>
+            </table>
+        </div>
+        <div class="right-section">
+            <table class="table-bordered widthFix">
+                <tr>
+                    <td>@Html.LabelFor(model => model.VGA, new { @class = "myfix margin" })</td>
+                    <td>@Html.EditorFor(model => model.VGA, new { @class = "Fixleft" })</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.RAM, new { @class = "myfix margin" })</td>
+                    <td>@Html.EditorFor(model => model.RAM, new { @class = "Fixleft" })</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.BusRam, new { @class = "myfix margin" })</td>
+                    <td>@Html.EditorFor(model => model.BusRam, new { @class = "Fixleft" })</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.MaxRam, new { @class = "myfix margin" })</td>
+                    <td>@Html.EditorFor(model => model.MaxRam, new { @class = "Fixleft" })</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Storage, new { @class = "myfix margin" })</td>
+                    <td>@Html.EditorFor(model => model.Storage, new { @class = "Fixleft" })</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Monitor, new { @class = "myfix margin" })</td>
+                    <td>@Html.EditorFor(model => model.Monitor, new { @class = "Fixleft" })</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Resolution, new { @class = "myfix margin" })</td>
+                    <td>@Html.EditorFor(model => model.Resolution, new { @class = "Fixleft" })</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Nen, new { @class = "myfix margin" })</td>
+                    <td>@Html.EditorFor(model => model.Nen, new { @class = "Fixleft" })</td>
+                </tr>
+                @*<tr>
+                    <td>@Html.LabelFor(model => model.ImagePro, new { @class = "myfix margin" })</td>
+                    <td>
+                        <img src="@Url.Content(Model.ImagePro)" height="150" width="150" id="previewImg" />
+                    </td>
+                </tr>*@
+            </table>
+        </div>
+    </div>
+    <div class="footer-section ">
+        <table class="">
+            <tr>
+                <td colspan="2">
+                    <input type="file" name="UploadImage" onchange="ChangeImage(this, document.getElementById('previewImg'))" class="myfix margin" />
+                    <input type="submit" value="Create" class="btn myfix margin" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    }
+
+</div>
+
